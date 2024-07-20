@@ -65,11 +65,15 @@ app.put("/completed", async function(req, res){
         message: "Completed status updated successfully"
     })
 })
-app.delete("/todo:id",async(req, res)=>{
+app.delete("/todo/:_id",async(req, res)=>{
     console.log("delete invoked")
-    const id = req.params.id;
+    const _id = req.params._id;
+    if (!_id) {
+        console.log("invalid req")
+        return res.status(400).json({ message: "Invalid request" });
+      }
     try {
-        await todo.findByIdAndDelete(id);
+        await todo.findByIdAndDelete(_id);
         res.status(200).json({
             message: "Todo deleted successfully"
         })

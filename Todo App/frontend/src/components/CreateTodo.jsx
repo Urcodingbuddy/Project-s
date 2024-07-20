@@ -26,6 +26,7 @@ export function CreateTodo({onTodoCreated}){
     }
     return(
         <div className="card">
+            <h2>Create Todo & make tasks remebering easy :)</h2>
             <input type="text"  placeholder="Title" onChange={(e)=> setTitle(e.target.value)}/>
             <input type="text"  placeholder="Description" onChange={(e)=> setDescription(e.target.value)}/>
             <button onClick={handleAddTodo}>Add Todo</button>

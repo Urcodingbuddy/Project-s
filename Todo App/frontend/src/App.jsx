@@ -6,7 +6,7 @@ import {Todos} from'./components/Todos'
 
 function App() {
   const [todos , setTodos] = useState([]);
-  const [isDataFetched, setIsDataFetched] = useState(false)
+  const [setIsDataFetched] = useState(false)
   useEffect(()=>{
       fetchTodos();
   },[])
@@ -38,16 +38,16 @@ function App() {
     
   }
 
-  const handleTodoDeleted = async(id) => {
+  const handleTodoDeleted = async(_id) => {
     try{
-      await fetch(`http://localhost:${port}/todo/${id}`,{
+      await fetch(`http://localhost:${port}/todo/${_id}`,{
 
         method:"DELETE"
       })
       await fetchTodos();
     }
     catch(e){
-
+      alert(e)
     }
   }
 
