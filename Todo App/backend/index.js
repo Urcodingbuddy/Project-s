@@ -65,6 +65,22 @@ app.put("/completed", async function(req, res){
         message: "Completed status updated successfully"
     })
 })
+app.delete("/todo:id",async(req, res)=>{
+    console.log("delete invoked")
+    const id = req.params.id;
+    try {
+        await todo.findByIdAndDelete(id);
+        res.status(200).json({
+            message: "Todo deleted successfully"
+        })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            message: "Somthing went wrong"
+        })
+    }
+})
+
 app.listen(port, "0.0.0.0",()=>{
     console.log(`Server is activated on ${port} :)`)
 })
