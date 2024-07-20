@@ -3,8 +3,9 @@ const express = require("express")
 const app = express();
 const {createtodo, updatetodo} = require("../backend/types");
 const { todo } = require("../backend/db")
+const cors = require('cors')
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }))
@@ -46,21 +47,23 @@ app.post("/todo",async function(req, res){
 app.put("/completed", async function(req, res){
     console.log("put invoked")
     const updatePayload = req.body;
-    const parsepayload = updatePayload.safeParsePayload(updatePayload);
+    const parsepayload = updatetodo.safeParse(updatePayload);
     console.log(parsepayload)
+    try {   
     if(!parsepayload){
         res.status(404).json({
             msg:"You have sent wrong inputs"
         })
-        return;
     }
-    try {        
     } catch (error) {
         console.error(error)
         res.status(500).json({
             message: "Somthing went wrong"
         })
     }
+    res.json({
+        message: "Completed status updated successfully"
+    })
 })
 app.listen(port, "0.0.0.0",()=>{
     console.log(`Server is activated on ${port} :)`)
