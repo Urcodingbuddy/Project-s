@@ -65,7 +65,7 @@ app.put("/completed", async function(req, res){
         message: "Completed status updated successfully"
     })
 })
-app.delete("/todo/:_id",async(req, res)=>{
+app.delete("/todo/:_id",async(req, res)=>{ 
     console.log("delete invoked")
     const _id = req.params._id;
     if (!_id) {
