@@ -8,6 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.grid {
+  grid-template-columns: repeat(12, minmax(0, 60px));
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
