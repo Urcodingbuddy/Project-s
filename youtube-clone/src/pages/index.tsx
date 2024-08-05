@@ -8,7 +8,7 @@ export default function Home() {
   return (
       <div>
         <VideoCard
-        thumbImage={"https://i.postimg.cc/W1kMhpC1/01-DV-thumb.jpg"}
+        thumbImage={"https://i.postimg.cc/MphsXFG1/image.png"}
         pfpImage={"https://i.postimg.cc/pr7Y9mBq/image.jpg"}
         title={"Natrure: Dolby Vision(4k) | The Most Beautiful Earth 4K HDR 60 FPS"}
         chName={"8K VISON"}
