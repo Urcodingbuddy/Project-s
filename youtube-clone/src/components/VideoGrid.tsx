@@ -36,7 +36,7 @@ const Videos = [
 
 
 export const VideoGrid = () =>{
-    return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" >
+    return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5" >
         {Videos.map(Video => <div>
             <VideoCard
         thumbImage={Video.thumbImage}
