@@ -8,8 +8,8 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-.grid {
-  grid-template-columns: repeat(12, minmax(0, 60px));
+.detailgrid {
+  grid-template-columns: repeat(15, minmax(0, 25px));
 }
 
 @media (prefers-color-scheme: dark) {
