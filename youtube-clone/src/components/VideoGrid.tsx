@@ -100,7 +100,7 @@ const Videos = [
 
 
 export const VideoGrid = () =>{
-    return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5" >
+    return <div className="w-[85.5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 overflow-y-scroll-auto" >
         {Videos.map(Video => <div>
             <VideoCard
         thumbImage={Video.thumbImage}
