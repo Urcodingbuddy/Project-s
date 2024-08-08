@@ -6,12 +6,12 @@ export const countAtom = atom({
 });
 export const TodosAtom = atom({
     key: "todosAtom",
-    default: [], // initialize with an empty array
+    default: JSON.parse(localStorage.getItem("todos")) || []
   });
   
   export const FilterAtom = atom({
     key: "filterAtom",
-    default: "", // initialize with an empty string
+    default: "",
   });
 
   export const FilteredTodo = selector({
