@@ -3,13 +3,22 @@ const mongoose = require("mongoose");
 const app = express();
 
 
-mongoose.connect("mongodb+srv://anshpethe110:%40mangoanshpethe159@cluster0.702twr0.mongodb.net/paytm-app?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://anshpethe110:%40mangoanshpethe159@cluster0.702twr0.mongodb.net/paytm-apps?retryWrites=true&w=majority")
 
 .then(()=> console.log("Connected to MongoDB"))
 .catch((err)=> console.log("Failed to connect: "+err));
 
 
 const userSchema = new mongoose.Schema({
+    username:{
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+        minLength: 3,
+        maxLength: 30
+    },
     firstName:{
         type: String,
         required: true,
@@ -21,15 +30,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         maxLength: 50
-    },
-    username:{
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        lowercase: true,
-        minLength: 3,
-        maxLength: 30
     },
     
     password:{
